@@ -1,5 +1,5 @@
 # colorGame
 Simple Color Guessing Game
 
-### Finished Webpage
+### Finished Webpage - http://yaarpatandaraa.github.io/colorGame
 ![](/screenCaps/fullPage.gif)
