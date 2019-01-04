@@ -7,7 +7,31 @@ var colors = [
     "rgb(255, 0, 255)"
 ]
 var squares = document.querySelectorAll(".squares");
+var pickedColor = colors[3];
+var colorDisplay = document.getElementById("colorDisplay");
+var messageDisplay = document.querySelector("#message")
 
-for(var i=0; i < squares.length; i++){
+colorDisplay.textContent = pickedColor
+
+for (let i = 0; i < squares.length; i++) {
     squares[i].style.backgroundColor = colors[i]
+
+    squares[i].addEventListener("click", function () {
+        var clickedColor = this.style.backgroundColor;
+
+        if (clickedColor === pickedColor) {
+            messageDisplay.textContent = "Correct!";
+            changeColors(clickedColor);
+        }
+        else {
+            this.style.backgroundColor = "#232323";
+            messageDisplay.textContent = "Try Again!";
+        }
+    })
+}
+
+function changeColors(color) {
+    for (let i = 0; i < squares.length; i++) {
+        squares[i].style.backgroundColor = color;
+    }
 }
